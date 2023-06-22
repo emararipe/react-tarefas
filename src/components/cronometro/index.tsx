@@ -1,5 +1,5 @@
 import React from 'react'
-import { Botao } from '../botao'
+import Botao from '../botao'
 import Relogio from './relogio'
 import style from "./Cronometro.module.scss"
 
