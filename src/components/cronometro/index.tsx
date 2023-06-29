@@ -7,9 +7,10 @@ import { tempoParaSeegundos } from '../../common/utils/time';
 
 interface Props {
   selecionado: Itarefa | undefined
+  finalizaTarefa: () => void
 }
 
-function Cronometro({ selecionado }: Props) {
+function Cronometro({ selecionado, finalizaTarefa }: Props) {
   const [tempo, setTempo] = useState<number>()
   useEffect(() => {
     if (selecionado?.tempo) {
@@ -23,6 +24,7 @@ function Cronometro({ selecionado }: Props) {
         setTempo(contador - 1)
         return regressiva(contador - 1)
       }
+      finalizaTarefa()
     }, 1000)
   }
 
